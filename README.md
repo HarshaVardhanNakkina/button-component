@@ -79,7 +79,7 @@ $ yarn install
 # Run the app
 $ npm run dev
 # or
-$ yarn run dev
+$ yarn dev
 ```
 
 ## Acknowledgements
