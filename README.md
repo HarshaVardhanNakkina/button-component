@@ -24,15 +24,15 @@
 
 <!-- TABLE OF CONTENTS -->
 
-## Table of Contents
+# Table of Contents
 
 - [Table of Contents](#table-of-contents)
-- [Overview](#overview)
-  - [Built With](#built-with)
-- [Features](#features)
-- [How To Use](#how-to-use)
-- [Acknowledgements](#acknowledgements)
-- [Contact](#contact)
+  - [Overview](#overview)
+    - [Built With](#built-with)
+  - [Features](#features)
+  - [How To Use](#how-to-use)
+  - [Acknowledgements](#acknowledgements)
+  - [Contact](#contact)
 
 <!-- OVERVIEW -->
 
@@ -52,8 +52,8 @@ Introduce your projects by taking a screenshot or a gif. Try to tell visitors a 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
 - [React](https://reactjs.org/)
-- [Vue.js](https://vuejs.org/)
-- [Tailwind](https://tailwindcss.com/)
+- [Pracel.js](https://parceljs.org/)
+- [Styled Components](https://styled-components.com/)
 
 ## Features
 
@@ -86,7 +86,6 @@ $ yarn dev
 
 <!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For exmpale -->
 
-- [Styled Components](https://styled-components.com/)
 - [Metrial Icons](https://material-ui.com/components/material-icons/)
 - [Metrial Icon Component](https://material-ui.com/components/icons/)
 - [Metrial Icons Fonts](https://fonts.googleapis.com/icon?family=Material+Icons)

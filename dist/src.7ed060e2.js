@@ -32052,7 +32052,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.COLORS = void 0;
+exports.SIZE = exports.COLORS = void 0;
 var COLORS = {
   disabledColor: '#9E9E9E',
   disabledBg: '#E0E0E0',
@@ -32086,6 +32086,13 @@ var COLORS = {
   }
 };
 exports.COLORS = COLORS;
+var SIZE = {
+  sm: "".concat(4 / 16, "rem ").concat(10 / 16, "rem"),
+  md: "".concat(9 / 16, "rem ").concat(16 / 16, "rem"),
+  default: "".concat(9 / 16, "rem ").concat(16 / 16, "rem"),
+  lg: "".concat(14 / 16, "rem ").concat(22 / 16, "rem")
+};
+exports.SIZE = SIZE;
 },{}],"../src/styles/StyledButton.js":[function(require,module,exports) {
 "use strict";
 
@@ -32106,8 +32113,10 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var StyledButton = _styledComponents.default.button.withConfig({
   displayName: "StyledButton",
   componentId: "m881y2-0"
-})(["display:flex;align-items:center;font-family:'Noto Sans JP',sans-serif;font-style:normal;font-weight:500;font-size:14px;line-height:20px;text-align:center;border:none;border-radius:6px;box-shadow:", ";transition:background-color 0.2s ease-in-out;padding:0.5rem 1rem;margin:1rem;background-color:", ";color:", ";&:hover,&:focus{background-color:", ";cursor:pointer;}", ";", ""], function (props) {
+})(["display:flex;align-items:center;font-family:'Noto Sans JP',sans-serif;font-style:normal;font-weight:500;font-size:14px;text-align:center;border:none;border-radius:6px;box-shadow:", ";transition:background-color 0.2s ease-in-out;padding:", ";margin:1rem;background-color:", ";color:", ";&:hover,&:focus{background-color:", ";cursor:pointer;}", ";", ""], function (props) {
   return props.disableShadow ? 'none' : props.color ? _variables.COLORS[props.color].boxShadow : _variables.COLORS.default.boxShadow;
+}, function (props) {
+  return props.size ? _variables.SIZE[props.size] : _variables.SIZE.default;
 }, function (props) {
   return props.color ? _variables.COLORS[props.color].background : _variables.COLORS.default.background;
 }, function (props) {
@@ -32127,7 +32136,7 @@ var StyledButton = _styledComponents.default.button.withConfig({
       break;
   }
 }, function (props) {
-  return props.disabled && (0, _styledComponents.css)(["color:", ";background-color:", ";&:hover,&:focus{background-color:", ";cursor:not-allowed;}"], _variables.COLORS.disabledColor, _variables.COLORS.disabledBg, _variables.COLORS.disabledBg);
+  return props.disabled && (0, _styledComponents.css)(["color:", ";background-color:", ";&:hover,&:focus{background-color:", ";pointer-events:none;}"], _variables.COLORS.disabledColor, _variables.COLORS.disabledBg, _variables.COLORS.disabledBg);
 });
 
 exports.StyledButton = StyledButton;
@@ -42258,16 +42267,36 @@ var _StyledIcon = require("./styles/StyledIcon");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // STYLES
-var snakeToCamel = function snakeToCamel(str) {
-  return str.replace(/([-_][a-z])/g, function (group) {
-    return group.toUpperCase().replace('-', '').replace('_', '');
-  });
+var mapSizes = function mapSizes(size) {
+  if (!size) return 'default';
+
+  switch (size) {
+    case 'sm':
+      return 'small';
+      break;
+
+    case 'md':
+      return 'default';
+      break;
+
+    case 'lg':
+      return 'large';
+      break;
+
+    default:
+      return 'default';
+      break;
+  }
 };
 
 var Button = function Button(props) {
   // const startIcon = props.startIcon ? snakeToCamel(props.startIcon) : ''
   // const endIcon = props.endIcon ? snakeToCamel(props.endIcon) : ''
-  return /*#__PURE__*/_react.default.createElement(_StyledButton.StyledButton, props, props.startIcon ? /*#__PURE__*/_react.default.createElement(_StyledIcon.StyledStartIcon, null, " ", props.startIcon, " ") : null, /*#__PURE__*/_react.default.createElement("span", null, props.children), props.endIcon ? /*#__PURE__*/_react.default.createElement(_StyledIcon.StyledEndIcon, null, " ", props.endIcon, " ") : null);
+  return /*#__PURE__*/_react.default.createElement(_StyledButton.StyledButton, props, props.startIcon ? /*#__PURE__*/_react.default.createElement(_StyledIcon.StyledStartIcon, {
+    fontSize: mapSizes(props.size)
+  }, props.startIcon, " ") : null, /*#__PURE__*/_react.default.createElement("span", null, props.children), props.endIcon ? /*#__PURE__*/_react.default.createElement(_StyledIcon.StyledEndIcon, {
+    fontSize: mapSizes(props.size)
+  }, props.endIcon, " ") : null);
 };
 
 var _default = Button;
@@ -42348,12 +42377,30 @@ var ShowCase = function ShowCase() {
   }, "Danger Text"), /*#__PURE__*/_react.default.createElement(_Button.default, {
     color: "primary",
     variant: "outline",
-    startIcon: "local_grocery_store"
-  }, "Start Icon Button"), /*#__PURE__*/_react.default.createElement(_Button.default, {
+    startIcon: "local_cafe"
+  }, "Start Icon"), /*#__PURE__*/_react.default.createElement(_Button.default, {
     color: "secondary",
     variant: "text",
-    endIcon: "local_grocery_store"
-  }, "End Icon Button"));
+    endIcon: "mail_outline"
+  }, "End Icon"), /*#__PURE__*/_react.default.createElement(_Button.default, {
+    color: "secondary",
+    variant: "outline",
+    endIcon: "send",
+    size: "sm"
+  }, "End Icon Small"), /*#__PURE__*/_react.default.createElement(_Button.default, {
+    color: "primary",
+    startIcon: "done",
+    size: "lg"
+  }, "Start Icon Large"), /*#__PURE__*/_react.default.createElement(_Button.default, {
+    color: "danger",
+    size: "sm"
+  }, "Small"), /*#__PURE__*/_react.default.createElement(_Button.default, {
+    color: "primary",
+    size: "md"
+  }, "Medium"), /*#__PURE__*/_react.default.createElement(_Button.default, {
+    color: "secondary",
+    size: "lg"
+  }, "Large"));
 };
 
 var _default = ShowCase;
@@ -42380,7 +42427,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // COMPONENTS
 var App = function App() {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_ShowCase.default, null), /*#__PURE__*/_react.default.createElement("footer", {
-    class: "attribution"
+    className: "attribution"
   }, /*#__PURE__*/_react.default.createElement("span", null, "HarshaVardhan @ DevChallenges.io")));
 };
 
@@ -42428,7 +42475,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53143" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63978" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

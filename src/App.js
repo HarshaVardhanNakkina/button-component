@@ -11,7 +11,7 @@ const App = () => {
 	return (
 		<>
 			<ShowCase />
-			<footer class='attribution'>
+			<footer className='attribution'>
 				<span>HarshaVardhan @ DevChallenges.io</span>
 			</footer>
 		</>

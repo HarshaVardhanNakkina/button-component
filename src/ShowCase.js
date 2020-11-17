@@ -39,11 +39,26 @@ const ShowCase = () => {
 			<Button color='danger' variant='text'>
 				Danger Text
 			</Button>
-			<Button color='primary' variant='outline' startIcon='local_grocery_store'>
-				Start Icon Button
+			<Button color='primary' variant='outline' startIcon='local_cafe'>
+				Start Icon
 			</Button>
-			<Button color='secondary' variant='text' endIcon='local_grocery_store'>
-				End Icon Button
+			<Button color='secondary' variant='text' endIcon='mail_outline'>
+				End Icon
+			</Button>
+			<Button color='secondary' variant='outline' endIcon='send' size='sm'>
+				End Icon Small
+			</Button>
+			<Button color='primary' startIcon='done' size='lg'>
+				Start Icon Large
+			</Button>
+			<Button color='danger' size='sm'>
+				Small
+			</Button>
+			<Button color='primary' size='md'>
+				Medium
+			</Button>
+			<Button color='secondary' size='lg'>
+				Large
 			</Button>
 		</Wrapper>
 	)

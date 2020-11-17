@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 // variables
-import { COLORS } from './variables'
+import { COLORS, SIZE } from './variables'
 export const StyledButton = styled.button`
 	display: flex;
 	align-items: center;
@@ -9,7 +9,6 @@ export const StyledButton = styled.button`
 	font-style: normal;
 	font-weight: 500;
 	font-size: 14px;
-	line-height: 20px;
 	text-align: center;
 	border: none;
 	border-radius: 6px;
@@ -23,7 +22,7 @@ export const StyledButton = styled.button`
 
 	/* width: 81px;
   height: 36px; */
-	padding: 0.5rem 1rem;
+	padding: ${props => (props.size ? SIZE[props.size] : SIZE.default)};
 	margin: 1rem;
 
 	background-color: ${props =>
@@ -79,7 +78,7 @@ export const StyledButton = styled.button`
 			&:hover,
 			&:focus {
 				background-color: ${COLORS.disabledBg};
-				cursor: not-allowed;
+				pointer-events: none;
 			}
 		`}
 `

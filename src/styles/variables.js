@@ -30,3 +30,10 @@ export const COLORS = {
 		boxShadow: '0px 2px 3px rgba(211, 47, 47, 0.2)'
 	}
 }
+
+export const SIZE = {
+	sm: `${4 / 16}rem ${10 / 16}rem`,
+	md: `${9 / 16}rem ${16 / 16}rem`,
+	default: `${9 / 16}rem ${16 / 16}rem`,
+	lg: `${14 / 16}rem ${22 / 16}rem`
+}
