@@ -27,7 +27,7 @@ const Button = props => {
 	// const startIcon = props.startIcon ? snakeToCamel(props.startIcon) : ''
 	// const endIcon = props.endIcon ? snakeToCamel(props.endIcon) : ''
 	return (
-		<StyledButton {...props}>
+		<StyledButton {...props} disabled={props.disabled}>
 			{props.startIcon ? (
 				<StyledStartIcon fontSize={mapSizes(props.size)}>{props.startIcon} </StyledStartIcon>
 			) : null}

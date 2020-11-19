@@ -42266,7 +42266,8 @@ var _StyledIcon = require("./styles/StyledIcon");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// STYLES
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 var mapSizes = function mapSizes(size) {
   if (!size) return 'default';
 
@@ -42292,7 +42293,9 @@ var mapSizes = function mapSizes(size) {
 var Button = function Button(props) {
   // const startIcon = props.startIcon ? snakeToCamel(props.startIcon) : ''
   // const endIcon = props.endIcon ? snakeToCamel(props.endIcon) : ''
-  return /*#__PURE__*/_react.default.createElement(_StyledButton.StyledButton, props, props.startIcon ? /*#__PURE__*/_react.default.createElement(_StyledIcon.StyledStartIcon, {
+  return /*#__PURE__*/_react.default.createElement(_StyledButton.StyledButton, _extends({}, props, {
+    disabled: props.disabled
+  }), props.startIcon ? /*#__PURE__*/_react.default.createElement(_StyledIcon.StyledStartIcon, {
     fontSize: mapSizes(props.size)
   }, props.startIcon, " ") : null, /*#__PURE__*/_react.default.createElement("span", null, props.children), props.endIcon ? /*#__PURE__*/_react.default.createElement(_StyledIcon.StyledEndIcon, {
     fontSize: mapSizes(props.size)
@@ -42475,7 +42478,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63978" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58899" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
